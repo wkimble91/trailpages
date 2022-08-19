@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="row">
+    <h1 class="text-center">Edit <%= trail.title %> </h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/trails/<%= trail._id %>?_method=PUT" method="POST" novalidate class="validated-form"
+            enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="trail[title]" value="<%= trail.title %>"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="trail[location]"
+                    value="<%= trail.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Trail Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="trail[price]" value="<%= trail.price %>" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="trail[description]"
+                    required><%= trail.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Add Additional Images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
+            <div class="mb-5">
+                <% trail.images.forEach(function(img, i) { %>
+                <img src="<%= img.thumbnail %>" alt="" class="img-thumbnail">
+                <div class="form-check-inline">
+                    <input type="checkbox" name="deleteImages[]" id="image-<%=i%>" value="<%=img.filename%>">
+                </div>
+                <label for="image-<%=i%>">Delete?</label>
+                <% }) %>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Edit Trail</button>
+                <a class="btn btn-secondary" href="/trails/<%= trail._id %>">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
