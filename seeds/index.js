@@ -46,7 +46,7 @@ const seedDB = async () => {
             ],
             description: `${sample(descriptions)}`,
             price,
-            creator: '62f3d67ce6c16d02d03d7a9f',
+            creator: '62ffcb57e883b89aef5928a3',
             geometry: {
                 type: 'Point',
                 coordinates: [
