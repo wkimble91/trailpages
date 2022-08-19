@@ -30,7 +30,7 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item text-muted"><%= trail.location %></li>
                 <li class="list-group-item">Added by: <%= trail.creator.username %></li>
-                <li class="list-group-item">$<%= trail.price %>/night</li>
+                <li class="list-group-item">$<%= trail.price %>/day</li>
             </ul>
             <% if( currentUser && trail.creator.equals(currentUser._id)) {%>
             <div class="card-body">
