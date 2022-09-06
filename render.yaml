@@ -2,15 +2,9 @@
 # https://www.npmjs.com/package/@renderinc/heroku-import
 # Schema documented at https://render.com/docs/yaml-spec
 services:
-  - type: web # valid values: https://render.com/docs/yaml-spec#type
-    name: trail-pages
-    env: docker # valid values: https://render.com/docs/yaml-spec#environment
-    dockerfilePath: Dockerfile.render
-    plan: free # optional; defaults to starter
-    numInstances: 1
-    envVars:
-      - key: CLOUD_NAME # Imported from Heroku app
-        value: djigjf2ob
-      - key: DB_URL # Imported from Heroku app
-        value: mongodb+srv://wkimble91:7emhuJBr6EpwHf936txnMWg7TyD7Yc@cluster0.pmajram.mongodb.net/?retryWrites&#x3D;true&amp;w&#x3D;majority
-
+    - type: web # valid values: https://render.com/docs/yaml-spec#type
+      name: trail-pages
+      env: docker # valid values: https://render.com/docs/yaml-spec#environment
+      dockerfilePath: Dockerfile.render
+      plan: free # optional; defaults to starter
+      numInstances: 1
