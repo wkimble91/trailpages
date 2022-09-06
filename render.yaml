@@ -11,6 +11,14 @@ services:
     envVars:
       - key: CLOUD_NAME # Imported from Heroku app
         value: djigjf2ob
+      - key: CLOUD_KEY # Imported from Heroku app
+        value: 678834757447518
+      - key: CLOUD_SECRET # Imported from Heroku app
+        value: TtxUlD_YLw63FLKjbObPK0BkNow
+      - key: MAPBOX_TOKEN # Imported from Heroku app
+        value: pk.eyJ1Ijoid2tpbWJsZTkxIiwiYSI6ImNsNnY3cTNvZTBxeG4zanA1d2JlZGI2czgifQ.XL0zWyZlG5ZEP2Q0eefVdA
+      - key: SECRET # Imported from Heroku app
+        value: Z8HsXPC8m9Qr6jQqNvey
       - key: DB_URL # Imported from Heroku app
         value: mongodb+srv://wkimble91:7emhuJBr6EpwHf936txnMWg7TyD7Yc@cluster0.pmajram.mongodb.net/?retryWrites&#x3D;true&amp;w&#x3D;majority
 
