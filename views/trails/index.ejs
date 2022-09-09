@@ -1,12 +1,12 @@
 <% layout('layouts/index-boilerplate')%>
 <div id="cluster-map" class="mb-2"></div>
 <div class="container mb-5">
-    <h1 class="text-center">Welcome To Trail Pages!</h1>
+    <h1 id="welcome" class="text-center">Welcome To Trail Pages!</h1>
     <p class="text-center ">View our hand-made trails from all over the country</p>
 </div>
 <div class="container">
     <% for (let trail of trails) {%>
-    <div class="card mb-3">
+    <div class="card mb-2">
         <div class="row">
             <div class="col-md-4">
                 <% if(trail.images.length) { %>
@@ -22,7 +22,8 @@
                     </strong>
                     <p class="card-text"><%= trail.description %></p>
                     <p class="card-text"><small class="text-muted"><%=trail.location%></small></p>
-                    <a class="btn btn-primary" href="/trails/<%= trail._id %>">View <%= trail.title %> </a>
+                    <a class="btn btn-success mt-xl-4" href="/trails/<%= trail._id %>">View
+                        <%= trail.title %> </a>
                 </div>
             </div>
         </div>

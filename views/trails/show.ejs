@@ -34,7 +34,7 @@
             </ul>
             <% if( currentUser && trail.creator.equals(currentUser._id)) {%>
             <div class="card-body">
-                <a class="card-link btn btn-primary" href="/trails/<%=trail._id%>/edit">Edit</a>
+                <a class="card-link btn btn-success" href="/trails/<%=trail._id%>/edit">Edit</a>
                 <form class="d-inline" action="/trails/<%=trail._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-danger">Delete</button>
                 </form>
@@ -69,7 +69,7 @@
                 <label class="form-label" for="body">Review Text:</label>
                 <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
             </div>
-            <button class="btn btn-success">Submit</button>
+            <button class="btn btn-primary">Submit</button>
         </form>
         <%} else { %>
         <h2 class="my-3">Reviews</h2>
