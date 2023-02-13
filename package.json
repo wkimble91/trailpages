@@ -6,8 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js",
-        "build": "npm-run-all seed start",
-        "seed": "node seeds/index.js"
+        "seed": "node seeds/index.js",
+        "build": "npm-run-all seed start"
     },
     "keywords": [],
     "author": "",
