@@ -77,7 +77,7 @@
         <%for(let review of trail.reviews) {%>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">By: <%=review.author.username%></h5>
+                <h5 class="card-title">By: <%=review.author%></h5>
                 <p class="starability-result" data-rating="<%=review.rating%>">
                     Rated: <%=review.rating%> stars
                 </p>
