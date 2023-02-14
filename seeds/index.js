@@ -4,9 +4,7 @@ const { review, rating, author } = require('./reviews');
 const { places, descriptors, descriptions, imageURLs } = require('./trails');
 const Trail = require('../models/trails');
 
-// const dbUrl = process.env.DB_URL;
-const dbUrl =
-    'mongodb+srv://wkimble91:7emhuJBr6EpwHf936txnMWg7TyD7Yc@cluster0.pmajram.mongodb.net/?retryWrites=true&w=majority';
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
