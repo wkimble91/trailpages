@@ -16,7 +16,7 @@ const sample = (array) => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
     await Trail.deleteMany({});
-    for (let i = 0; i < 400; i++) {
+    for (let i = 0; i < 500; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
         const price = Math.floor(Math.random() * 30) + 1;
         const trail = new Trail({
@@ -39,10 +39,6 @@ const seedDB = async () => {
                     url: `${sample(imageURLs)}`,
                     filename: `${this.title}TrailSeededImage4`,
                 },
-                {
-                    url: `${sample(imageURLs)}`,
-                    filename: `${this.title}TrailSeededImage5`,
-                },
             ],
             description: `${sample(descriptions)}`,
             price,
@@ -54,6 +50,7 @@ const seedDB = async () => {
                     cities[random1000].latitude,
                 ],
             },
+            ratings: {},
         });
         await trail.save();
     }
