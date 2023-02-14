@@ -34,6 +34,7 @@ const TrailSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'User',
         },
+        madeBy: String,
         reviews: [
             {
                 type: Schema.Types.ObjectId,

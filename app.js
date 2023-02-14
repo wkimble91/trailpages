@@ -15,7 +15,7 @@ const User = require('./models/user');
 const helmet = require('helmet');
 
 const MongoStore = require('connect-mongo');
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/trail-pages';
+const dbUrl = process.env.DB_URL;
 
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(mongoSanitize());
 
-const secret = process.env.SECRET || 'thisisabadsecret';
+const secret = process.env.SECRET;
 const store = new MongoStore({
     mongoUrl: dbUrl,
     secret,
@@ -154,7 +154,7 @@ app.use((err, req, res, next) => {
 });
 
 // Port App Is Hosted On
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Serving on port ${port}`);
 });
