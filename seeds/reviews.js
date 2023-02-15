@@ -70,7 +70,7 @@ module.exports.author = [
 module.exports.rating = [1, 2, 3, 3, 4, 4, 4, 5, 5, 5];
 
 //Review Text
-module.exports.review = [
+module.exports.body = [
     'Pretty shaded and so very muddy even after days since rain. Wear appropriate shoes.',
     'Great hike. Not too crowded.',
     'Lots of steps!',

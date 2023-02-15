@@ -35,6 +35,7 @@ const TrailSchema = new Schema(
             ref: 'User',
         },
         madeBy: String,
+        difficulty: String,
         reviews: [
             {
                 type: Schema.Types.ObjectId,

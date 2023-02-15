@@ -66,6 +66,15 @@ module.exports.places = [
     'Age',
 ];
 
+module.exports.difficulty = [
+    'Very Easy',
+    'Easy',
+    'Medium',
+    'Hard',
+    'Very Hard',
+    'Dangerous',
+];
+
 module.exports.descriptions = [
     'This trail leads to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park.',
     'This trail requires backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy.',

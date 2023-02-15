@@ -37,6 +37,7 @@ module.exports.trailSchema = Joi.object({
 module.exports.reviewSchema = Joi.object({
     review: Joi.object({
         rating: Joi.number().required().min(0).max(5),
-        body: Joi.string().required().cleanHTML(),
+        body: Joi.string().cleanHTML(),
+        author: Joi.string().required().cleanHTML(),
     }),
 });

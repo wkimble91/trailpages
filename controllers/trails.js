@@ -37,6 +37,33 @@ module.exports.createTrail = async (req, res, next) => {
     res.redirect(`/trails/${trail._id}`);
 };
 
+module.exports.createSeededTrail = async (req, res, next) => {
+    const geoData = await geocoder
+        .forwardGeocode({
+            query: req.body.trail.location,
+            limit: 1,
+        })
+        .send();
+    const trail = new Trail(req.body.trail);
+    trail.geometry = geoData.body.features[0].geometry;
+    trail.images = req.files.map((f) => ({
+        url: f.path,
+        filename: f.filename,
+    }));
+    trail.creator = req.user._id;
+    const trailId = await Trail.findById(req.params.id);
+    const review = new Review(req.body.review);
+    review.author = req.user._id;
+    trail.reviews.push(review);
+    await review.save();
+    await trail.save();
+    req.flash('success', 'Review posted');
+    res.redirect(`/trails/${trail._id}`);
+    await trail.save();
+    req.flash('success', 'Successfully posted the new trail');
+    res.redirect(`/trails/${trail._id}`);
+};
+
 module.exports.showTrail = async (req, res) => {
     const trail = await Trail.findById(req.params.id)
         .populate({

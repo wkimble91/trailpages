@@ -24,13 +24,14 @@
         </div>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title"><%= trail.title %></h5>
+                <h4 class="card-title"><%= trail.title %></h4>
+                <p class="text-muted"><%= trail.location %></p>
                 <p class="card-text"><%= trail.description %></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item text-muted"><%= trail.location %></li>
-                <li class="list-group-item">Added by: <%= trail.creator.username %></li>
-                <li class="list-group-item">$<%= trail.price %>/day</li>
+                <li class="list-group-item">Difficulty: <%= trail.difficulty %></li>
+                <li class="list-group-item">Added by: <%= trail.madeBy %></li>
+                <li class="list-group-item">$<%= trail.price %> / day</li>
             </ul>
             <% if( currentUser && trail.creator.equals(currentUser._id)) {%>
             <div class="card-body">
@@ -82,7 +83,7 @@
                     Rated: <%=review.rating%> stars
                 </p>
                 <p class="card-text"><%=review.body%></p>
-                <% if(currentUser && review.author.equals(currentUser._id)) {%>
+                <% if(currentUser && review.author == currentUser._id) {%>
                 <form action="/trails/<%=trail._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </form>
@@ -96,5 +97,6 @@
 <script>
     const mapToken='<%-process.env.MAPBOX_TOKEN%>';
     const trail=<%- JSON.stringify(trail)%>;
+    console.log(trail)
 </script>
         <script src="/js/showPageMap.js"></script>

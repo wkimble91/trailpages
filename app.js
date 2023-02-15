@@ -154,7 +154,7 @@ app.use((err, req, res, next) => {
 });
 
 // Port App Is Hosted On
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Serving on port ${port}`);
 });
