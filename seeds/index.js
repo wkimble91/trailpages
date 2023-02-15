@@ -11,8 +11,7 @@ const {
 const Trail = require('../models/trails');
 const Review = require('../models/review');
 
-const dbUrl =
-    'mongodb+srv://wkimble91:7emhuJBr6EpwHf936txnMWg7TyD7Yc@cluster0.pmajram.mongodb.net/?retryWrites=true&w=majority';
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
