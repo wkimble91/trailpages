@@ -1,0 +1,9 @@
+.trail-banner {
+    height: 55vh;
+}
+
+.trail-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 100px;
+}
